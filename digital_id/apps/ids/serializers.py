@@ -1,5 +1,5 @@
+from .models import ID  # Adjust the import based on your actual model location
 from rest_framework import serializers
-from ..models import ID  # Adjust the import based on your actual model location
 
 class IDSerializer(serializers.ModelSerializer):
     class Meta:

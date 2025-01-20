@@ -1,8 +1,8 @@
 from django.urls import path
-from . import views
+from .views import IDViewSet
 
 urlpatterns = [
-    path('ids/', views.IDListView.as_view(), name='id-list'),
-    path('ids/<int:pk>/', views.IDDetailView.as_view(), name='id-detail'),
-    path('ids/renew/<int:pk>/', views.IDRenewView.as_view(), name='id-renew'),
+    path('', IDViewSet.as_view({'get': 'list'}), name='id-list'),
+    path('<int:pk>/', IDViewSet.as_view({'get': 'retrieve'}), name='id-detail'),
+    path('renew/<int:pk>/', IDViewSet.as_view({'put': 'update'}), name='id-renew'),
 ]
