@@ -1,12 +1,12 @@
 # Digital ID Backend
 
-This project is a multiuse digital ID system for residents of a city, designed to streamline the management of various identification documents through a single digital ID issued by the government. The system utilizes biometrics for user registration and provides both a web application and a mobile application for user interaction.
+This project is a multiuse digital ID system for residents of Sheger city, designed to streamline the management of various identification documents through a single digital ID issued by the government. The system utilizes biometrics for user registration and provides both a web application and a mobile application for user interaction.
 
 ## Project Structure
 
 The project is structured as follows:
 
-```
+```sh
 digital-id-backend
 ├── digital_id
 │   ├── __init__.py
@@ -66,25 +66,29 @@ digital-id-backend
 ## Setup Instructions
 
 1. **Clone the Repository**:
-   ```
+
+```bash
    git clone <repository-url>
    cd digital-id-backend
-   ```
+```
 
 2. **Install Dependencies**:
-   ```
+
+```bash
    pip install -r requirements.txt
-   ```
+```
 
 3. **Run Migrations**:
-   ```
+
+```bash
    python manage.py migrate
-   ```
+```
 
 4. **Start the Development Server**:
-   ```
+
+```bash
    python manage.py runserver
-   ```
+```
 
 5. **Access the Application**:
    Open your web browser and navigate to `http://127.0.0.1:8000/`.
