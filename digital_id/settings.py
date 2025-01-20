@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+import dj_database_url
 
 # Load environment variables from .env file
 load_dotenv()
@@ -63,9 +64,7 @@ ASGI_APPLICATION = 'digital_id.asgi.application'
 
 # Database
 DATABASES = {
-    'default': {
-        os.getenv('DATABASE_URL')
-    }
+    'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
 }
 
 # Password validation
