@@ -1,8 +1,8 @@
 from django.urls import path
-from . import views
+from .views import UserBiometricViewSet
 
 urlpatterns = [
-    path('register/', views.register_biometrics, name='register_biometrics'),
-    path('retrieve/', views.retrieve_biometrics, name='retrieve_biometrics'),
-    path('update/', views.update_biometrics, name='update_biometrics'),
+    path('register/', UserBiometricViewSet.as_view({'post': 'create'}), name='register_biometrics'),
+    path('retrieve/', UserBiometricViewSet.as_view({'get': 'retrieve'}), name='retrieve_biometrics'),
+    path('update/', UserBiometricViewSet.as_view({'put': 'update'}), name='update_biometrics'),
 ]

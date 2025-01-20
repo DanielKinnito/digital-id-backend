@@ -1,11 +1,11 @@
 from rest_framework import viewsets
 from rest_framework.response import Response
-from .models import BiometricData
-from .serializers import BiometricDataSerializer
+from .models import UserBiometric
+from .serializers import UserBiometricSerializer
 
-class BiometricDataViewSet(viewsets.ModelViewSet):
-    queryset = BiometricData.objects.all()
-    serializer_class = BiometricDataSerializer
+class UserBiometricViewSet(viewsets.ModelViewSet):
+    queryset = UserBiometric.objects.all()
+    serializer_class = UserBiometricSerializer
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)

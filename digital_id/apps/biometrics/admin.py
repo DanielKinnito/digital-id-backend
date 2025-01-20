@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import BiometricData
+from .models import UserBiometric
 
-admin.site.register(BiometricData)
+admin.site.register(UserBiometric)

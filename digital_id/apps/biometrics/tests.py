@@ -1,18 +1,18 @@
 from django.test import TestCase
-from .models import BiometricData
+from .models import UserBiometric
 
-class BiometricDataModelTest(TestCase):
+class UserBiometricModelTest(TestCase):
     def setUp(self):
-        self.biometric_data = BiometricData.objects.create(
+        self.user_biometric = UserBiometric.objects.create(
             user_id=1,
-            fingerprint='sample_fingerprint_data',
+            fingerprint=b'sample_fingerprint_data',
             photo='sample_photo_url'
         )
 
-    def test_biometric_data_creation(self):
-        self.assertEqual(self.biometric_data.user_id, 1)
-        self.assertEqual(self.biometric_data.fingerprint, 'sample_fingerprint_data')
-        self.assertEqual(self.biometric_data.photo, 'sample_photo_url')
+    def test_user_biometric_creation(self):
+        self.assertEqual(self.user_biometric.user_id, 1)
+        self.assertEqual(self.user_biometric.fingerprint, b'sample_fingerprint_data')
+        self.assertEqual(self.user_biometric.photo, 'sample_photo_url')
 
-    def test_biometric_data_str(self):
-        self.assertEqual(str(self.biometric_data), 'BiometricData for user 1')
+    def test_user_biometric_str(self):
+        self.assertEqual(str(self.user_biometric), 'Biometric data for user 1')

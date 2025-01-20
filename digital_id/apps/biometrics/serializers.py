@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import BiometricData
+from .models import UserBiometric
 
-class BiometricDataSerializer(serializers.ModelSerializer):
+class UserBiometricSerializer(serializers.ModelSerializer):
     class Meta:
-        model = BiometricData
-        fields = ['id', 'user', 'fingerprint', 'photo', 'created_at', 'updated_at']
+        model = UserBiometric
+        fields = ['id', 'user_id', 'fingerprint', 'photo', 'created_at', 'updated_at']
