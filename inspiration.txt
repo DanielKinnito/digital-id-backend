@@ -1,0 +1,1257 @@
+├── .idea
+    ├── codeStyles
+    │   └── codeStyleConfig.xml
+    ├── modules.xml
+    ├── python-microservices.iml
+    └── workspace.xml
+├── admin
+    ├── Dockerfile
+    ├── admin
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   ├── __init__.cpython-39.pyc
+    │   │   ├── settings.cpython-39.pyc
+    │   │   ├── urls.cpython-39.pyc
+    │   │   └── wsgi.cpython-39.pyc
+    │   ├── asgi.py
+    │   ├── settings.py
+    │   ├── urls.py
+    │   └── wsgi.py
+    ├── consumer.py
+    ├── docker-compose.yml
+    ├── manage.py
+    ├── products
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   ├── __init__.cpython-39.pyc
+    │   │   ├── admin.cpython-39.pyc
+    │   │   ├── models.cpython-39.pyc
+    │   │   ├── producer.cpython-39.pyc
+    │   │   ├── serializers.cpython-39.pyc
+    │   │   ├── urls.cpython-39.pyc
+    │   │   └── views.cpython-39.pyc
+    │   ├── admin.py
+    │   ├── apps.py
+    │   ├── migrations
+    │   │   ├── 0001_initial.py
+    │   │   ├── __init__.py
+    │   │   └── __pycache__
+    │   │   │   ├── 0001_initial.cpython-39.pyc
+    │   │   │   └── __init__.cpython-39.pyc
+    │   ├── models.py
+    │   ├── producer.py
+    │   ├── serializers.py
+    │   ├── tests.py
+    │   ├── urls.py
+    │   └── views.py
+    └── requirements.txt
+└── main
+    ├── Dockerfile
+    ├── __pycache__
+        ├── main.cpython-39.pyc
+        └── producer.cpython-39.pyc
+    ├── consumer.py
+    ├── docker-compose.yml
+    ├── main.py
+    ├── manager.py
+    ├── migrations
+        ├── README
+        ├── __pycache__
+        │   └── env.cpython-39.pyc
+        ├── alembic.ini
+        ├── env.py
+        ├── script.py.mako
+        └── versions
+        │   ├── 843c810aec1f_.py
+        │   └── __pycache__
+        │       └── 843c810aec1f_.cpython-39.pyc
+    ├── producer.py
+    └── requirements.txt
+
+
+/.idea/codeStyles/codeStyleConfig.xml:
+--------------------------------------------------------------------------------
+1 | <component name="ProjectCodeStyleConfiguration">
+2 |   <state>
+3 |     <option name="PREFERRED_PROJECT_CODE_STYLE" value="Default" />
+4 |   </state>
+5 | </component>
+
+
+--------------------------------------------------------------------------------
+/.idea/modules.xml:
+--------------------------------------------------------------------------------
+1 | <?xml version="1.0" encoding="UTF-8"?>
+2 | <project version="4">
+3 |   <component name="ProjectModuleManager">
+4 |     <modules>
+5 |       <module fileurl="file://$PROJECT_DIR$/.idea/python-microservices.iml" filepath="$PROJECT_DIR$/.idea/python-microservices.iml" />
+6 |     </modules>
+7 |   </component>
+8 | </project>
+
+
+--------------------------------------------------------------------------------
+/.idea/python-microservices.iml:
+--------------------------------------------------------------------------------
+1 | <?xml version="1.0" encoding="UTF-8"?>
+2 | <module type="WEB_MODULE" version="4">
+3 |   <component name="NewModuleRootManager">
+4 |     <content url="file://$MODULE_DIR
+quot; />
+5 |     <orderEntry type="inheritedJdk" />
+6 |     <orderEntry type="sourceFolder" forTests="false" />
+7 |   </component>
+8 | </module>
+
+
+--------------------------------------------------------------------------------
+/.idea/workspace.xml:
+--------------------------------------------------------------------------------
+ 1 | <?xml version="1.0" encoding="UTF-8"?>
+ 2 | <project version="4">
+ 3 |   <component name="ChangeListManager">
+ 4 |     <list default="true" id="e6aec2e5-cc2f-4e59-9b4b-04022cde69f8" name="Default Changelist" comment="" />
+ 5 |     <option name="SHOW_DIALOG" value="false" />
+ 6 |     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+ 7 |     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+ 8 |     <option name="LAST_RESOLUTION" value="IGNORE" />
+ 9 |   </component>
+10 |   <component name="ComposerSettings">
+11 |     <execution />
+12 |   </component>
+13 |   <component name="ProjectId" id="1lkuJCjltWpC35Uw74QhOpqqeMJ" />
+14 |   <component name="ProjectViewState">
+15 |     <option name="hideEmptyMiddlePackages" value="true" />
+16 |     <option name="showLibraryContents" value="true" />
+17 |   </component>
+18 |   <component name="PropertiesComponent">
+19 |     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+20 |     <property name="WebServerToolWindowFactoryState" value="false" />
+21 |     <property name="last_opened_file_path" value="$PROJECT_DIR
+quot; />
+22 |     <property name="vue.rearranger.settings.migration" value="true" />
+23 |   </component>
+24 |   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+25 |   <component name="TaskManager">
+26 |     <task active="true" id="Default" summary="Default task">
+27 |       <changelist id="e6aec2e5-cc2f-4e59-9b4b-04022cde69f8" name="Default Changelist" comment="" />
+28 |       <created>1608153335669</created>
+29 |       <option name="number" value="Default" />
+30 |       <option name="presentableId" value="Default" />
+31 |       <updated>1608153335669</updated>
+32 |       <workItem from="1608153336741" duration="18000" />
+33 |       <workItem from="1608153411289" duration="92000" />
+34 |     </task>
+35 |     <servers />
+36 |   </component>
+37 |   <component name="TypeScriptGeneratedFilesManager">
+38 |     <option name="version" value="3" />
+39 |   </component>
+40 |   <component name="WindowStateProjectService">
+41 |     <state width="500" height="445" key="SwitcherDM" timestamp="1608153466025">
+42 |       <screen x="0" y="0" width="2560" height="1440" />
+43 |     </state>
+44 |     <state width="500" height="445" key="SwitcherDM/-1920.240.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1608153466025" />
+45 |   </component>
+46 | </project>
+
+
+--------------------------------------------------------------------------------
+/admin/Dockerfile:
+--------------------------------------------------------------------------------
+1 | FROM python:3.9
+2 | ENV PYTHONUNBUFFERED 1
+3 | WORKDIR /app
+4 | COPY requirements.txt /app/requirements.txt
+5 | RUN pip install -r requirements.txt
+6 | COPY . /app
+
+
+--------------------------------------------------------------------------------
+/admin/admin/__init__.py:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/scalablescripts/python-microservices/96df1095835722ddbfe10a65fdeb18eebeb7b3f8/admin/admin/__init__.py
+
+
+--------------------------------------------------------------------------------
+/admin/admin/__pycache__/__init__.cpython-39.pyc:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/scalablescripts/python-microservices/96df1095835722ddbfe10a65fdeb18eebeb7b3f8/admin/admin/__pycache__/__init__.cpython-39.pyc
+
+
+--------------------------------------------------------------------------------
+/admin/admin/__pycache__/settings.cpython-39.pyc:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/scalablescripts/python-microservices/96df1095835722ddbfe10a65fdeb18eebeb7b3f8/admin/admin/__pycache__/settings.cpython-39.pyc
+
+
+--------------------------------------------------------------------------------
+/admin/admin/__pycache__/urls.cpython-39.pyc:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/scalablescripts/python-microservices/96df1095835722ddbfe10a65fdeb18eebeb7b3f8/admin/admin/__pycache__/urls.cpython-39.pyc
+
+
+--------------------------------------------------------------------------------
+/admin/admin/__pycache__/wsgi.cpython-39.pyc:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/scalablescripts/python-microservices/96df1095835722ddbfe10a65fdeb18eebeb7b3f8/admin/admin/__pycache__/wsgi.cpython-39.pyc
+
+
+--------------------------------------------------------------------------------
+/admin/admin/asgi.py:
+--------------------------------------------------------------------------------
+ 1 | """
+ 2 | ASGI config for admin project.
+ 3 | 
+ 4 | It exposes the ASGI callable as a module-level variable named ``application``.
+ 5 | 
+ 6 | For more information on this file, see
+ 7 | https://docs.djangoproject.com/en/3.1/howto/deployment/asgi/
+ 8 | """
+ 9 | 
+10 | import os
+11 | 
+12 | from django.core.asgi import get_asgi_application
+13 | 
+14 | os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'admin.settings')
+15 | 
+16 | application = get_asgi_application()
+17 | 
+
+
+--------------------------------------------------------------------------------
+/admin/admin/settings.py:
+--------------------------------------------------------------------------------
+  1 | """
+  2 | Django settings for admin project.
+  3 | 
+  4 | Generated by 'django-admin startproject' using Django 3.1.3.
+  5 | 
+  6 | For more information on this file, see
+  7 | https://docs.djangoproject.com/en/3.1/topics/settings/
+  8 | 
+  9 | For the full list of settings and their values, see
+ 10 | https://docs.djangoproject.com/en/3.1/ref/settings/
+ 11 | """
+ 12 | 
+ 13 | from pathlib import Path
+ 14 | 
+ 15 | # Build paths inside the project like this: BASE_DIR / 'subdir'.
+ 16 | BASE_DIR = Path(__file__).resolve().parent.parent
+ 17 | 
+ 18 | # Quick-start development settings - unsuitable for production
+ 19 | # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
+ 20 | 
+ 21 | # SECURITY WARNING: keep the secret key used in production secret!
+ 22 | SECRET_KEY = 'jr_!&njk1=$yoehd$)2tg8jouv!ig5wrrw%ka_-vjj@1as1bv@'
+ 23 | 
+ 24 | # SECURITY WARNING: don't run with debug turned on in production!
+ 25 | DEBUG = True
+ 26 | 
+ 27 | ALLOWED_HOSTS = []
+ 28 | 
+ 29 | # Application definition
+ 30 | 
+ 31 | INSTALLED_APPS = [
+ 32 |     'django.contrib.admin',
+ 33 |     'django.contrib.auth',
+ 34 |     'django.contrib.contenttypes',
+ 35 |     'django.contrib.sessions',
+ 36 |     'django.contrib.messages',
+ 37 |     'django.contrib.staticfiles',
+ 38 |     'rest_framework',
+ 39 |     'corsheaders',
+ 40 |     'products'
+ 41 | ]
+ 42 | 
+ 43 | MIDDLEWARE = [
+ 44 |     'django.middleware.security.SecurityMiddleware',
+ 45 |     'django.contrib.sessions.middleware.SessionMiddleware',
+ 46 |     'corsheaders.middleware.CorsMiddleware',
+ 47 |     'django.middleware.common.CommonMiddleware',
+ 48 |     'django.middleware.csrf.CsrfViewMiddleware',
+ 49 |     'django.contrib.auth.middleware.AuthenticationMiddleware',
+ 50 |     'django.contrib.messages.middleware.MessageMiddleware',
+ 51 |     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+ 52 | ]
+ 53 | 
+ 54 | ROOT_URLCONF = 'admin.urls'
+ 55 | 
+ 56 | TEMPLATES = [
+ 57 |     {
+ 58 |         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+ 59 |         'DIRS': [],
+ 60 |         'APP_DIRS': True,
+ 61 |         'OPTIONS': {
+ 62 |             'context_processors': [
+ 63 |                 'django.template.context_processors.debug',
+ 64 |                 'django.template.context_processors.request',
+ 65 |                 'django.contrib.auth.context_processors.auth',
+ 66 |                 'django.contrib.messages.context_processors.messages',
+ 67 |             ],
+ 68 |         },
+ 69 |     },
+ 70 | ]
+ 71 | 
+ 72 | WSGI_APPLICATION = 'admin.wsgi.application'
+ 73 | 
+ 74 | # Database
+ 75 | # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+ 76 | 
+ 77 | DATABASES = {
+ 78 |     'default': {
+ 79 |         'ENGINE': 'django.db.backends.mysql',
+ 80 |         'NAME': 'admin',
+ 81 |         'USER': 'root',
+ 82 |         'PASSWORD': 'root',
+ 83 |         'HOST': 'db',
+ 84 |         'PORT': '3306',
+ 85 |     }
+ 86 | }
+ 87 | 
+ 88 | # Password validation
+ 89 | # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
+ 90 | 
+ 91 | AUTH_PASSWORD_VALIDATORS = [
+ 92 |     {
+ 93 |         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+ 94 |     },
+ 95 |     {
+ 96 |         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+ 97 |     },
+ 98 |     {
+ 99 |         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+100 |     },
+101 |     {
+102 |         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+103 |     },
+104 | ]
+105 | 
+106 | # Internationalization
+107 | # https://docs.djangoproject.com/en/3.1/topics/i18n/
+108 | 
+109 | LANGUAGE_CODE = 'en-us'
+110 | 
+111 | TIME_ZONE = 'UTC'
+112 | 
+113 | USE_I18N = True
+114 | 
+115 | USE_L10N = True
+116 | 
+117 | USE_TZ = True
+118 | 
+119 | # Static files (CSS, JavaScript, Images)
+120 | # https://docs.djangoproject.com/en/3.1/howto/static-files/
+121 | 
+122 | STATIC_URL = '/static/'
+123 | 
+124 | CORS_ORIGIN_ALLOW_ALL = True
+125 | 
+
+
+--------------------------------------------------------------------------------
+/admin/admin/urls.py:
+--------------------------------------------------------------------------------
+ 1 | """admin URL Configuration
+ 2 | 
+ 3 | The `urlpatterns` list routes URLs to views. For more information please see:
+ 4 |     https://docs.djangoproject.com/en/3.1/topics/http/urls/
+ 5 | Examples:
+ 6 | Function views
+ 7 |     1. Add an import:  from my_app import views
+ 8 |     2. Add a URL to urlpatterns:  path('', views.home, name='home')
+ 9 | Class-based views
+10 |     1. Add an import:  from other_app.views import Home
+11 |     2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+12 | Including another URLconf
+13 |     1. Import the include() function: from django.urls import include, path
+14 |     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+15 | """
+16 | from django.contrib import admin
+17 | from django.urls import path, include
+18 | 
+19 | urlpatterns = [
+20 |     path('admin/', admin.site.urls),
+21 |     path('api/', include('products.urls'))
+22 | ]
+23 | 
+
+
+--------------------------------------------------------------------------------
+/admin/admin/wsgi.py:
+--------------------------------------------------------------------------------
+ 1 | """
+ 2 | WSGI config for admin project.
+ 3 | 
+ 4 | It exposes the WSGI callable as a module-level variable named ``application``.
+ 5 | 
+ 6 | For more information on this file, see
+ 7 | https://docs.djangoproject.com/en/3.1/howto/deployment/wsgi/
+ 8 | """
+ 9 | 
+10 | import os
+11 | 
+12 | from django.core.wsgi import get_wsgi_application
+13 | 
+14 | os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'admin.settings')
+15 | 
+16 | application = get_wsgi_application()
+17 | 
+
+
+--------------------------------------------------------------------------------
+/admin/consumer.py:
+--------------------------------------------------------------------------------
+ 1 | import pika, json, os, django
+ 2 | 
+ 3 | os.environ.setdefault("DJANGO_SETTINGS_MODULE", "admin.settings")
+ 4 | django.setup()
+ 5 | 
+ 6 | from products.models import Product
+ 7 | 
+ 8 | params = pika.URLParameters('your_rabbitmq_url')
+ 9 | 
+10 | connection = pika.BlockingConnection(params)
+11 | 
+12 | channel = connection.channel()
+13 | 
+14 | channel.queue_declare(queue='admin')
+15 | 
+16 | 
+17 | def callback(ch, method, properties, body):
+18 |     print('Received in admin')
+19 |     id = json.loads(body)
+20 |     print(id)
+21 |     product = Product.objects.get(id=id)
+22 |     product.likes = product.likes + 1
+23 |     product.save()
+24 |     print('Product likes increased!')
+25 | 
+26 | 
+27 | channel.basic_consume(queue='admin', on_message_callback=callback, auto_ack=True)
+28 | 
+29 | print('Started Consuming')
+30 | 
+31 | channel.start_consuming()
+32 | 
+33 | channel.close()
+34 | 
+
+
+--------------------------------------------------------------------------------
+/admin/docker-compose.yml:
+--------------------------------------------------------------------------------
+ 1 | version: '3.8'
+ 2 | services:
+ 3 |   backend:
+ 4 |     build:
+ 5 |       context: .
+ 6 |       dockerfile: Dockerfile
+ 7 |     command: 'python manage.py runserver 0.0.0.0:8000'
+ 8 |     ports:
+ 9 |       - 8000:8000
+10 |     volumes:
+11 |       - .:/app
+12 |     depends_on:
+13 |       - db
+14 | 
+15 |   queue:
+16 |     build:
+17 |       context: .
+18 |       dockerfile: Dockerfile
+19 |     command: 'python -u consumer.py'
+20 |     depends_on:
+21 |       - db
+22 | 
+23 |   db:
+24 |     image: mysql:5.7.22
+25 |     restart: always
+26 |     environment:
+27 |       MYSQL_DATABASE: admin
+28 |       MYSQL_USER: root
+29 |       MYSQL_PASSWORD: root
+30 |       MYSQL_ROOT_PASSWORD: root
+31 |     volumes:
+32 |       - .dbdata:/var/lib/mysql
+33 |     ports:
+34 |       - 33066:3306
+35 | 
+
+
+--------------------------------------------------------------------------------
+/admin/manage.py:
+--------------------------------------------------------------------------------
+ 1 | #!/usr/bin/env python
+ 2 | """Django's command-line utility for administrative tasks."""
+ 3 | import os
+ 4 | import sys
+ 5 | 
+ 6 | 
+ 7 | def main():
+ 8 |     """Run administrative tasks."""
+ 9 |     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'admin.settings')
+10 |     try:
+11 |         from django.core.management import execute_from_command_line
+12 |     except ImportError as exc:
+13 |         raise ImportError(
+14 |             "Couldn't import Django. Are you sure it's installed and "
+15 |             "available on your PYTHONPATH environment variable? Did you "
+16 |             "forget to activate a virtual environment?"
+17 |         ) from exc
+18 |     execute_from_command_line(sys.argv)
+19 | 
+20 | 
+21 | if __name__ == '__main__':
+22 |     main()
+23 | 
+
+
+--------------------------------------------------------------------------------
+/admin/products/__init__.py:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/scalablescripts/python-microservices/96df1095835722ddbfe10a65fdeb18eebeb7b3f8/admin/products/__init__.py
+
+
+--------------------------------------------------------------------------------
+/admin/products/__pycache__/__init__.cpython-39.pyc:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/scalablescripts/python-microservices/96df1095835722ddbfe10a65fdeb18eebeb7b3f8/admin/products/__pycache__/__init__.cpython-39.pyc
+
+
+--------------------------------------------------------------------------------
+/admin/products/__pycache__/admin.cpython-39.pyc:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/scalablescripts/python-microservices/96df1095835722ddbfe10a65fdeb18eebeb7b3f8/admin/products/__pycache__/admin.cpython-39.pyc
+
+
+--------------------------------------------------------------------------------
+/admin/products/__pycache__/models.cpython-39.pyc:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/scalablescripts/python-microservices/96df1095835722ddbfe10a65fdeb18eebeb7b3f8/admin/products/__pycache__/models.cpython-39.pyc
+
+
+--------------------------------------------------------------------------------
+/admin/products/__pycache__/producer.cpython-39.pyc:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/scalablescripts/python-microservices/96df1095835722ddbfe10a65fdeb18eebeb7b3f8/admin/products/__pycache__/producer.cpython-39.pyc
+
+
+--------------------------------------------------------------------------------
+/admin/products/__pycache__/serializers.cpython-39.pyc:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/scalablescripts/python-microservices/96df1095835722ddbfe10a65fdeb18eebeb7b3f8/admin/products/__pycache__/serializers.cpython-39.pyc
+
+
+--------------------------------------------------------------------------------
+/admin/products/__pycache__/urls.cpython-39.pyc:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/scalablescripts/python-microservices/96df1095835722ddbfe10a65fdeb18eebeb7b3f8/admin/products/__pycache__/urls.cpython-39.pyc
+
+
+--------------------------------------------------------------------------------
+/admin/products/__pycache__/views.cpython-39.pyc:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/scalablescripts/python-microservices/96df1095835722ddbfe10a65fdeb18eebeb7b3f8/admin/products/__pycache__/views.cpython-39.pyc
+
+
+--------------------------------------------------------------------------------
+/admin/products/admin.py:
+--------------------------------------------------------------------------------
+1 | from django.contrib import admin
+2 | 
+3 | # Register your models here.
+4 | 
+
+
+--------------------------------------------------------------------------------
+/admin/products/apps.py:
+--------------------------------------------------------------------------------
+1 | from django.apps import AppConfig
+2 | 
+3 | 
+4 | class ProductsConfig(AppConfig):
+5 |     name = 'products'
+6 | 
+
+
+--------------------------------------------------------------------------------
+/admin/products/migrations/0001_initial.py:
+--------------------------------------------------------------------------------
+ 1 | # Generated by Django 3.1.3 on 2020-12-07 16:13
+ 2 | 
+ 3 | from django.db import migrations, models
+ 4 | 
+ 5 | 
+ 6 | class Migration(migrations.Migration):
+ 7 | 
+ 8 |     initial = True
+ 9 | 
+10 |     dependencies = [
+11 |     ]
+12 | 
+13 |     operations = [
+14 |         migrations.CreateModel(
+15 |             name='Product',
+16 |             fields=[
+17 |                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+18 |                 ('title', models.CharField(max_length=200)),
+19 |                 ('image', models.CharField(max_length=200)),
+20 |                 ('likes', models.PositiveIntegerField(default=0)),
+21 |             ],
+22 |         ),
+23 |         migrations.CreateModel(
+24 |             name='User',
+25 |             fields=[
+26 |                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+27 |             ],
+28 |         ),
+29 |     ]
+30 | 
+
+
+--------------------------------------------------------------------------------
+/admin/products/migrations/__init__.py:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/scalablescripts/python-microservices/96df1095835722ddbfe10a65fdeb18eebeb7b3f8/admin/products/migrations/__init__.py
+
+
+--------------------------------------------------------------------------------
+/admin/products/migrations/__pycache__/0001_initial.cpython-39.pyc:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/scalablescripts/python-microservices/96df1095835722ddbfe10a65fdeb18eebeb7b3f8/admin/products/migrations/__pycache__/0001_initial.cpython-39.pyc
+
+
+--------------------------------------------------------------------------------
+/admin/products/migrations/__pycache__/__init__.cpython-39.pyc:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/scalablescripts/python-microservices/96df1095835722ddbfe10a65fdeb18eebeb7b3f8/admin/products/migrations/__pycache__/__init__.cpython-39.pyc
+
+
+--------------------------------------------------------------------------------
+/admin/products/models.py:
+--------------------------------------------------------------------------------
+ 1 | from django.db import models
+ 2 | 
+ 3 | 
+ 4 | class Product(models.Model):
+ 5 |     title = models.CharField(max_length=200)
+ 6 |     image = models.CharField(max_length=200)
+ 7 |     likes = models.PositiveIntegerField(default=0)
+ 8 | 
+ 9 | 
+10 | class User(models.Model):
+11 |     pass
+12 | 
+
+
+--------------------------------------------------------------------------------
+/admin/products/producer.py:
+--------------------------------------------------------------------------------
+ 1 | import pika, json
+ 2 | 
+ 3 | params = pika.URLParameters('your_rabbitmq_url')
+ 4 | 
+ 5 | connection = pika.BlockingConnection(params)
+ 6 | 
+ 7 | channel = connection.channel()
+ 8 | 
+ 9 | 
+10 | def publish(method, body):
+11 |     properties = pika.BasicProperties(method)
+12 |     channel.basic_publish(exchange='', routing_key='main', body=json.dumps(body), properties=properties)
+13 | 
+
+
+--------------------------------------------------------------------------------
+/admin/products/serializers.py:
+--------------------------------------------------------------------------------
+ 1 | from rest_framework import serializers
+ 2 | 
+ 3 | from .models import Product
+ 4 | 
+ 5 | 
+ 6 | class ProductSerializer(serializers.ModelSerializer):
+ 7 |     class Meta:
+ 8 |         model = Product
+ 9 |         fields = '__all__'
+10 | 
+
+
+--------------------------------------------------------------------------------
+/admin/products/tests.py:
+--------------------------------------------------------------------------------
+1 | from django.test import TestCase
+2 | 
+3 | # Create your tests here.
+4 | 
+
+
+--------------------------------------------------------------------------------
+/admin/products/urls.py:
+--------------------------------------------------------------------------------
+ 1 | from django.urls import path
+ 2 | 
+ 3 | from .views import ProductViewSet, UserAPIView
+ 4 | 
+ 5 | urlpatterns = [
+ 6 |     path('products', ProductViewSet.as_view({
+ 7 |         'get': 'list',
+ 8 |         'post': 'create'
+ 9 |     })),
+10 |     path('products/<str:pk>', ProductViewSet.as_view({
+11 |         'get': 'retrieve',
+12 |         'put': 'update',
+13 |         'delete': 'destroy'
+14 |     })),
+15 |     path('user', UserAPIView.as_view())
+16 | ]
+17 | 
+
+
+--------------------------------------------------------------------------------
+/admin/products/views.py:
+--------------------------------------------------------------------------------
+ 1 | from rest_framework import viewsets, status
+ 2 | from rest_framework.response import Response
+ 3 | from rest_framework.views import APIView
+ 4 | 
+ 5 | from .models import Product, User
+ 6 | from .producer import publish
+ 7 | from .serializers import ProductSerializer
+ 8 | import random
+ 9 | 
+10 | 
+11 | class ProductViewSet(viewsets.ViewSet):
+12 |     def list(self, request):
+13 |         products = Product.objects.all()
+14 |         serializer = ProductSerializer(products, many=True)
+15 |         return Response(serializer.data)
+16 | 
+17 |     def create(self, request):
+18 |         serializer = ProductSerializer(data=request.data)
+19 |         serializer.is_valid(raise_exception=True)
+20 |         serializer.save()
+21 |         publish('product_created', serializer.data)
+22 |         return Response(serializer.data, status=status.HTTP_201_CREATED)
+23 | 
+24 |     def retrieve(self, request, pk=None):
+25 |         product = Product.objects.get(id=pk)
+26 |         serializer = ProductSerializer(product)
+27 |         return Response(serializer.data)
+28 | 
+29 |     def update(self, request, pk=None):
+30 |         product = Product.objects.get(id=pk)
+31 |         serializer = ProductSerializer(instance=product, data=request.data)
+32 |         serializer.is_valid(raise_exception=True)
+33 |         serializer.save()
+34 |         publish('product_updated', serializer.data)
+35 |         return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
+36 | 
+37 |     def destroy(self, request, pk=None):
+38 |         product = Product.objects.get(id=pk)
+39 |         product.delete()
+40 |         publish('product_deleted', pk)
+41 |         return Response(status=status.HTTP_204_NO_CONTENT)
+42 | 
+43 | 
+44 | class UserAPIView(APIView):
+45 |     def get(self, _):
+46 |         users = User.objects.all()
+47 |         user = random.choice(users)
+48 |         return Response({
+49 |             'id': user.id
+50 |         })
+51 | 
+
+
+--------------------------------------------------------------------------------
+/admin/requirements.txt:
+--------------------------------------------------------------------------------
+1 | Django==3.1.3
+2 | djangorestframework==3.12.2
+3 | mysqlclient==2.0.1
+4 | django-mysql==3.9
+5 | django-cors-headers==3.5.0
+6 | pika==1.1.0
+
+
+--------------------------------------------------------------------------------
+/main/Dockerfile:
+--------------------------------------------------------------------------------
+1 | FROM python:3.9
+2 | ENV PYTHONUNBUFFERED 1
+3 | WORKDIR /app
+4 | COPY requirements.txt /app/requirements.txt
+5 | RUN pip install -r requirements.txt
+6 | COPY . /app
+
+
+--------------------------------------------------------------------------------
+/main/__pycache__/main.cpython-39.pyc:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/scalablescripts/python-microservices/96df1095835722ddbfe10a65fdeb18eebeb7b3f8/main/__pycache__/main.cpython-39.pyc
+
+
+--------------------------------------------------------------------------------
+/main/__pycache__/producer.cpython-39.pyc:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/scalablescripts/python-microservices/96df1095835722ddbfe10a65fdeb18eebeb7b3f8/main/__pycache__/producer.cpython-39.pyc
+
+
+--------------------------------------------------------------------------------
+/main/consumer.py:
+--------------------------------------------------------------------------------
+ 1 | import pika, json
+ 2 | 
+ 3 | from main import Product, db
+ 4 | 
+ 5 | params = pika.URLParameters('your_rabbitmq_url')
+ 6 | 
+ 7 | connection = pika.BlockingConnection(params)
+ 8 | 
+ 9 | channel = connection.channel()
+10 | 
+11 | channel.queue_declare(queue='main')
+12 | 
+13 | 
+14 | def callback(ch, method, properties, body):
+15 |     print('Received in main')
+16 |     data = json.loads(body)
+17 |     print(data)
+18 | 
+19 |     if properties.content_type == 'product_created':
+20 |         product = Product(id=data['id'], title=data['title'], image=data['image'])
+21 |         db.session.add(product)
+22 |         db.session.commit()
+23 |         print('Product Created')
+24 | 
+25 |     elif properties.content_type == 'product_updated':
+26 |         product = Product.query.get(data['id'])
+27 |         product.title = data['title']
+28 |         product.image = data['image']
+29 |         db.session.commit()
+30 |         print('Product Updated')
+31 | 
+32 |     elif properties.content_type == 'product_deleted':
+33 |         product = Product.query.get(data)
+34 |         db.session.delete(product)
+35 |         db.session.commit()
+36 |         print('Product Deleted')
+37 | 
+38 | 
+39 | channel.basic_consume(queue='main', on_message_callback=callback, auto_ack=True)
+40 | 
+41 | print('Started Consuming')
+42 | 
+43 | channel.start_consuming()
+44 | 
+45 | channel.close()
+46 | 
+
+
+--------------------------------------------------------------------------------
+/main/docker-compose.yml:
+--------------------------------------------------------------------------------
+ 1 | version: '3.8'
+ 2 | services:
+ 3 |   backend:
+ 4 |     build:
+ 5 |       context: .
+ 6 |       dockerfile: Dockerfile
+ 7 |     command: 'python main.py'
+ 8 |     ports:
+ 9 |       - 8001:5000
+10 |     volumes:
+11 |       - .:/app
+12 |     depends_on:
+13 |       - db
+14 | 
+15 |   queue:
+16 |     build:
+17 |       context: .
+18 |       dockerfile: Dockerfile
+19 |     command: 'python -u consumer.py'
+20 |     depends_on:
+21 |       - db
+22 | 
+23 |   db:
+24 |     image: mysql:5.7.22
+25 |     restart: always
+26 |     environment:
+27 |       MYSQL_DATABASE: main
+28 |       MYSQL_USER: root
+29 |       MYSQL_PASSWORD: root
+30 |       MYSQL_ROOT_PASSWORD: root
+31 |     volumes:
+32 |       - .dbdata:/var/lib/mysql
+33 |     ports:
+34 |       - 33067:3306
+35 | 
+
+
+--------------------------------------------------------------------------------
+/main/main.py:
+--------------------------------------------------------------------------------
+ 1 | from dataclasses import dataclass
+ 2 | from flask import Flask, jsonify, abort
+ 3 | from flask_cors import CORS
+ 4 | from flask_sqlalchemy import SQLAlchemy
+ 5 | from sqlalchemy import UniqueConstraint
+ 6 | import requests
+ 7 | 
+ 8 | from producer import publish
+ 9 | 
+10 | app = Flask(__name__)
+11 | app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql://root:root@db/main'
+12 | CORS(app)
+13 | 
+14 | db = SQLAlchemy(app)
+15 | 
+16 | 
+17 | @dataclass
+18 | class Product(db.Model):
+19 |     id: int
+20 |     title: str
+21 |     image: str
+22 | 
+23 |     id = db.Column(db.Integer, primary_key=True, autoincrement=False)
+24 |     title = db.Column(db.String(200))
+25 |     image = db.Column(db.String(200))
+26 | 
+27 | 
+28 | @dataclass
+29 | class ProductUser(db.Model):
+30 |     id = db.Column(db.Integer, primary_key=True)
+31 |     user_id = db.Column(db.Integer)
+32 |     product_id = db.Column(db.Integer)
+33 | 
+34 |     UniqueConstraint('user_id', 'product_id', name='user_product_unique')
+35 | 
+36 | 
+37 | @app.route('/api/products')
+38 | def index():
+39 |     return jsonify(Product.query.all())
+40 | 
+41 | 
+42 | @app.route('/api/products/<int:id>/like', methods=['POST'])
+43 | def like(id):
+44 |     req = requests.get('http://docker.for.mac.localhost:8000/api/user')
+45 |     json = req.json()
+46 | 
+47 |     try:
+48 |         productUser = ProductUser(user_id=json['id'], product_id=id)
+49 |         db.session.add(productUser)
+50 |         db.session.commit()
+51 | 
+52 |         publish('product_liked', id)
+53 |     except:
+54 |         abort(400, 'You already liked this product')
+55 | 
+56 |     return jsonify({
+57 |         'message': 'success'
+58 |     })
+59 | 
+60 | 
+61 | if __name__ == '__main__':
+62 |     app.run(debug=True, host='0.0.0.0')
+63 | 
+
+
+--------------------------------------------------------------------------------
+/main/manager.py:
+--------------------------------------------------------------------------------
+ 1 | from main import app, db
+ 2 | from flask_migrate import Migrate, MigrateCommand
+ 3 | from flask_script import Manager
+ 4 | 
+ 5 | migrate = Migrate(app, db)
+ 6 | 
+ 7 | manager = Manager(app)
+ 8 | manager.add_command('db', MigrateCommand)
+ 9 | 
+10 | if __name__ == '__main__':
+11 |     manager.run()
+12 | 
+
+
+--------------------------------------------------------------------------------
+/main/migrations/README:
+--------------------------------------------------------------------------------
+1 | Generic single-database configuration.
+
+
+--------------------------------------------------------------------------------
+/main/migrations/__pycache__/env.cpython-39.pyc:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/scalablescripts/python-microservices/96df1095835722ddbfe10a65fdeb18eebeb7b3f8/main/migrations/__pycache__/env.cpython-39.pyc
+
+
+--------------------------------------------------------------------------------
+/main/migrations/alembic.ini:
+--------------------------------------------------------------------------------
+ 1 | # A generic, single database configuration.
+ 2 | 
+ 3 | [alembic]
+ 4 | # template used to generate migration files
+ 5 | # file_template = %%(rev)s_%%(slug)s
+ 6 | 
+ 7 | # set to 'true' to run the environment during
+ 8 | # the 'revision' command, regardless of autogenerate
+ 9 | # revision_environment = false
+10 | 
+11 | 
+12 | # Logging configuration
+13 | [loggers]
+14 | keys = root,sqlalchemy,alembic
+15 | 
+16 | [handlers]
+17 | keys = console
+18 | 
+19 | [formatters]
+20 | keys = generic
+21 | 
+22 | [logger_root]
+23 | level = WARN
+24 | handlers = console
+25 | qualname =
+26 | 
+27 | [logger_sqlalchemy]
+28 | level = WARN
+29 | handlers =
+30 | qualname = sqlalchemy.engine
+31 | 
+32 | [logger_alembic]
+33 | level = INFO
+34 | handlers =
+35 | qualname = alembic
+36 | 
+37 | [handler_console]
+38 | class = StreamHandler
+39 | args = (sys.stderr,)
+40 | level = NOTSET
+41 | formatter = generic
+42 | 
+43 | [formatter_generic]
+44 | format = %(levelname)-5.5s [%(name)s] %(message)s
+45 | datefmt = %H:%M:%S
+46 | 
+
+
+--------------------------------------------------------------------------------
+/main/migrations/env.py:
+--------------------------------------------------------------------------------
+ 1 | from __future__ import with_statement
+ 2 | 
+ 3 | import logging
+ 4 | from logging.config import fileConfig
+ 5 | 
+ 6 | from sqlalchemy import engine_from_config
+ 7 | from sqlalchemy import pool
+ 8 | 
+ 9 | from alembic import context
+10 | 
+11 | # this is the Alembic Config object, which provides
+12 | # access to the values within the .ini file in use.
+13 | config = context.config
+14 | 
+15 | # Interpret the config file for Python logging.
+16 | # This line sets up loggers basically.
+17 | fileConfig(config.config_file_name)
+18 | logger = logging.getLogger('alembic.env')
+19 | 
+20 | # add your model's MetaData object here
+21 | # for 'autogenerate' support
+22 | # from myapp import mymodel
+23 | # target_metadata = mymodel.Base.metadata
+24 | from flask import current_app
+25 | config.set_main_option(
+26 |     'sqlalchemy.url',
+27 |     str(current_app.extensions['migrate'].db.engine.url).replace('%', '%%'))
+28 | target_metadata = current_app.extensions['migrate'].db.metadata
+29 | 
+30 | # other values from the config, defined by the needs of env.py,
+31 | # can be acquired:
+32 | # my_important_option = config.get_main_option("my_important_option")
+33 | # ... etc.
+34 | 
+35 | 
+36 | def run_migrations_offline():
+37 |     """Run migrations in 'offline' mode.
+38 | 
+39 |     This configures the context with just a URL
+40 |     and not an Engine, though an Engine is acceptable
+41 |     here as well.  By skipping the Engine creation
+42 |     we don't even need a DBAPI to be available.
+43 | 
+44 |     Calls to context.execute() here emit the given string to the
+45 |     script output.
+46 | 
+47 |     """
+48 |     url = config.get_main_option("sqlalchemy.url")
+49 |     context.configure(
+50 |         url=url, target_metadata=target_metadata, literal_binds=True
+51 |     )
+52 | 
+53 |     with context.begin_transaction():
+54 |         context.run_migrations()
+55 | 
+56 | 
+57 | def run_migrations_online():
+58 |     """Run migrations in 'online' mode.
+59 | 
+60 |     In this scenario we need to create an Engine
+61 |     and associate a connection with the context.
+62 | 
+63 |     """
+64 | 
+65 |     # this callback is used to prevent an auto-migration from being generated
+66 |     # when there are no changes to the schema
+67 |     # reference: http://alembic.zzzcomputing.com/en/latest/cookbook.html
+68 |     def process_revision_directives(context, revision, directives):
+69 |         if getattr(config.cmd_opts, 'autogenerate', False):
+70 |             script = directives[0]
+71 |             if script.upgrade_ops.is_empty():
+72 |                 directives[:] = []
+73 |                 logger.info('No changes in schema detected.')
+74 | 
+75 |     connectable = engine_from_config(
+76 |         config.get_section(config.config_ini_section),
+77 |         prefix='sqlalchemy.',
+78 |         poolclass=pool.NullPool,
+79 |     )
+80 | 
+81 |     with connectable.connect() as connection:
+82 |         context.configure(
+83 |             connection=connection,
+84 |             target_metadata=target_metadata,
+85 |             process_revision_directives=process_revision_directives,
+86 |             **current_app.extensions['migrate'].configure_args
+87 |         )
+88 | 
+89 |         with context.begin_transaction():
+90 |             context.run_migrations()
+91 | 
+92 | 
+93 | if context.is_offline_mode():
+94 |     run_migrations_offline()
+95 | else:
+96 |     run_migrations_online()
+97 | 
+
+
+--------------------------------------------------------------------------------
+/main/migrations/script.py.mako:
+--------------------------------------------------------------------------------
+ 1 | """${message}
+ 2 | 
+ 3 | Revision ID: ${up_revision}
+ 4 | Revises: ${down_revision | comma,n}
+ 5 | Create Date: ${create_date}
+ 6 | 
+ 7 | """
+ 8 | from alembic import op
+ 9 | import sqlalchemy as sa
+10 | ${imports if imports else ""}
+11 | 
+12 | # revision identifiers, used by Alembic.
+13 | revision = ${repr(up_revision)}
+14 | down_revision = ${repr(down_revision)}
+15 | branch_labels = ${repr(branch_labels)}
+16 | depends_on = ${repr(depends_on)}
+17 | 
+18 | 
+19 | def upgrade():
+20 |     ${upgrades if upgrades else "pass"}
+21 | 
+22 | 
+23 | def downgrade():
+24 |     ${downgrades if downgrades else "pass"}
+25 | 
+
+
+--------------------------------------------------------------------------------
+/main/migrations/versions/843c810aec1f_.py:
+--------------------------------------------------------------------------------
+ 1 | """empty message
+ 2 | 
+ 3 | Revision ID: 843c810aec1f
+ 4 | Revises: 
+ 5 | Create Date: 2020-12-08 08:40:37.736465
+ 6 | 
+ 7 | """
+ 8 | from alembic import op
+ 9 | import sqlalchemy as sa
+10 | 
+11 | 
+12 | # revision identifiers, used by Alembic.
+13 | revision = '843c810aec1f'
+14 | down_revision = None
+15 | branch_labels = None
+16 | depends_on = None
+17 | 
+18 | 
+19 | def upgrade():
+20 |     # ### commands auto generated by Alembic - please adjust! ###
+21 |     op.create_table('product',
+22 |     sa.Column('id', sa.Integer(), autoincrement=False, nullable=False),
+23 |     sa.Column('title', sa.String(length=200), nullable=True),
+24 |     sa.Column('image', sa.String(length=200), nullable=True),
+25 |     sa.PrimaryKeyConstraint('id')
+26 |     )
+27 |     op.create_table('product_user',
+28 |     sa.Column('id', sa.Integer(), nullable=False),
+29 |     sa.Column('user_id', sa.Integer(), nullable=True),
+30 |     sa.Column('product_id', sa.Integer(), nullable=True),
+31 |     sa.PrimaryKeyConstraint('id')
+32 |     )
+33 |     # ### end Alembic commands ###
+34 | 
+35 | 
+36 | def downgrade():
+37 |     # ### commands auto generated by Alembic - please adjust! ###
+38 |     op.drop_table('product_user')
+39 |     op.drop_table('product')
+40 |     # ### end Alembic commands ###
+41 | 
+
+
+--------------------------------------------------------------------------------
+/main/migrations/versions/__pycache__/843c810aec1f_.cpython-39.pyc:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/scalablescripts/python-microservices/96df1095835722ddbfe10a65fdeb18eebeb7b3f8/main/migrations/versions/__pycache__/843c810aec1f_.cpython-39.pyc
+
+
+--------------------------------------------------------------------------------
+/main/producer.py:
+--------------------------------------------------------------------------------
+ 1 | import pika, json
+ 2 | 
+ 3 | params = pika.URLParameters('your_rabbitmq_url')
+ 4 | 
+ 5 | connection = pika.BlockingConnection(params)
+ 6 | 
+ 7 | channel = connection.channel()
+ 8 | 
+ 9 | 
+10 | def publish(method, body):
+11 |     properties = pika.BasicProperties(method)
+12 |     channel.basic_publish(exchange='', routing_key='admin', body=json.dumps(body), properties=properties)
+13 | 
+
+
+--------------------------------------------------------------------------------
+/main/requirements.txt:
+--------------------------------------------------------------------------------
+1 | Flask==1.1.2
+2 | Flask-SQLAlchemy==2.4.4
+3 | SQLAlchemy==1.3.20
+4 | Flask-Migrate==2.5.3
+5 | Flask-Script==2.0.6
+6 | Flask-Cors==3.0.9
+7 | requests==2.25.0
+8 | mysqlclient==2.0.1
+9 | pika==1.1.0
+
+
+--------------------------------------------------------------------------------
