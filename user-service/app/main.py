@@ -1,14 +1,15 @@
 import sys
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.api import users
 from app.core.database import engine
 from app.core.models import Base
-from dotenv import load_dotenv
-
-# Load environment variables from .env file
-load_dotenv()
 
 # Ensure the app directory is in the Python path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))

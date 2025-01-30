@@ -7,3 +7,5 @@ python-jose
 passlib
 pika
 python-dotenv
+pydantic
+email-validator

@@ -4,6 +4,9 @@ import os
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
+if not DATABASE_URL:
+    raise ValueError("No DATABASE_URL set for SQLAlchemy engine")
+
 engine = create_async_engine(DATABASE_URL, echo=True)
 AsyncSessionLocal = sessionmaker(
     engine, class_=AsyncSession, expire_on_commit=False
@@ -18,4 +21,4 @@ async def get_db():
             await session.rollback()
             raise
         finally:
-            await session.close() 
+            await session.close()
