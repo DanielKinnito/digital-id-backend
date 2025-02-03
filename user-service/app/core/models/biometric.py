@@ -1,17 +1,15 @@
 from sqlalchemy import Column, Integer, LargeBinary, ForeignKey, DateTime, String
 from sqlalchemy.orm import relationship
 from datetime import datetime
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
+from .base import Base
 
 class BiometricData(Base):
     __tablename__ = 'biometric_data'
 
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey('users.id'), unique=True)
-    wbf_template_id = Column(String(255), unique=True)  # Store WBF template ID
-    photo_reference = Column(String(255))  # Store reference to photo location
+    fingerprint_template = Column(String(1000))  # Changed from wbf_template_id
+    photo_reference = Column(String(255))
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
