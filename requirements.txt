@@ -10,3 +10,5 @@ pytest
 pytest-django
 gunicorn
 dj-database-url
+hiredis
+prometheus_fastapi_instrumentator
