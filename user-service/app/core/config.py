@@ -1,15 +1,8 @@
+import os
 from pydantic_settings import BaseSettings
 from typing import Optional
 
 class Settings(BaseSettings):
-    # Database settings
-    DATABASE_URL: str = "postgresql+asyncpg://user:password@localhost:5432/digital_id"
-    
-    # JWT settings
-    JWT_SECRET_KEY: str
-    JWT_ALGORITHM: str = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
-    
     # CORS settings
     ALLOWED_ORIGINS: list = ["*"]
     
@@ -22,8 +15,19 @@ class Settings(BaseSettings):
     USER_SERVICE_URL: str = "http://user-service:8001"
     ID_SERVICE_URL: str = "http://id-service:8002"
 
+    # JWT settings
+    JWT_SECRET_KEY: str = os.getenv("JWT_SECRET_KEY")
+    JWT_ALGORITHM: str = "HS256"
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
+    
+    # Database Settings
+    DATABASE_URL: str = os.getenv("DATABASE_URL")
     class Config:
         env_file = ".env"
         case_sensitive = True
 
 settings = Settings() 
+
+# Validate database URL format
+if not settings.DATABASE_URL:
+    raise ValueError("DATABASE_URL must be set in environment variables") 

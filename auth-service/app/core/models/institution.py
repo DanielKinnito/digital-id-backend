@@ -1,15 +1,18 @@
-from sqlalchemy import Column, Integer, String, DateTime, Boolean
-from sqlalchemy.orm import relationship
 from datetime import datetime
-from base import Base
+from sqlalchemy import Column, Integer, String, DateTime, Boolean, JSON
+from sqlalchemy.orm import relationship
+from .base import Base
 
 class Institution(Base):
     __tablename__ = 'institutions'
 
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(Integer, primary_key=True)
     name = Column(String(100), nullable=False)
-    type = Column(String(50), nullable=False)  # e.g., "university", "government"
-    registration_number = Column(String(50), unique=True, nullable=False)
+    code = Column(String(50), unique=True, nullable=False)
+    address = Column(String(200))
+    contact_email = Column(String(100))
+    contact_phone = Column(String(20))
+    settings = Column(JSON, default={})
     is_active = Column(Boolean, default=True)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)

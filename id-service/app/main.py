@@ -56,18 +56,21 @@ Include the token in the Authorization header as: `Bearer <token>`
     # Add security scheme
     openapi_schema["components"]["securitySchemes"] = {
         "OAuth2PasswordBearer": {
-            "type": "oauth2",
-            "flows": {
-                "password": {
-                    "tokenUrl": "token",
-                    "scopes": {
-                        "super_admin": "Full system access",
-                        "institutional_admin": "Institution management access",
-                        "resident": "Resident access",
-                        "staff": "Staff access"
-                    }
-                }
-            }
+            "type": "http",
+            "scheme": "bearer",
+            "bearerFormat": "JWT"
+            # "type": "oauth2",
+            # "flows": {
+            #     "password": {
+            #         "tokenUrl": "token",
+            #         "scopes": {
+            #             "super_admin": "Full system access",
+            #             "institutional_admin": "Institution management access",
+            #             "resident": "Resident access",
+            #             "staff": "Staff access"
+            #         }
+            #     }
+            # }
         }
     }
 

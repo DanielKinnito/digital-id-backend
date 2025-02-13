@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, Security, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
-from shared.database import get_db
+from app.core.database import get_db
 from app.core.auth import get_current_user, require_super_admin
 from app.core.auth.jwt import get_password_hash
 from app.core.schemas.admin import (
@@ -10,7 +10,7 @@ from app.core.schemas.admin import (
     ReportResponse,
     InstitutionResponse
 )
-from app.core.models import User, UserRole, Institution, Report
+from app.core.models import User, UserRole, Institution, Report, Role
 from typing import List
 from datetime import date, datetime
 import httpx
@@ -49,9 +49,16 @@ async def create_institutional_admin(
         username=admin.username,
         email=admin.email,
         hashed_password=get_password_hash(admin.password),
-        role=UserRole.INSTITUTIONAL_ADMIN,
         institution_id=admin.institution_id
     )
+    
+    # Add institutional admin role
+    result = await db.execute(
+        select(Role).where(Role.name == UserRole.INSTITUTIONAL_ADMIN)
+    )
+    admin_role = result.scalar_one_or_none()
+    if admin_role:
+        db_admin.roles.append(admin_role)
     
     db.add(db_admin)
     await db.commit()
@@ -95,9 +102,10 @@ async def generate_reports(
     if report_type == "user_registrations":
         result = await db.execute(
             select(User)
+            .join(Role, User.roles)
             .where(
                 User.created_at.between(start_date, end_date),
-                User.role == UserRole.RESIDENT
+                Role.name == UserRole.RESIDENT
             )
         )
         users = result.scalars().all()
@@ -126,8 +134,9 @@ async def generate_reports(
         # Get admin counts
         admin_result = await db.execute(
             select(User)
+            .join(Role, User.roles)
             .where(
-                User.role == UserRole.INSTITUTIONAL_ADMIN,
+                Role.name == UserRole.INSTITUTIONAL_ADMIN,
                 User.is_active == True
             )
         )
@@ -137,8 +146,7 @@ async def generate_reports(
     report = Report(
         report_type=report_type,
         data=report_data,
-        generated_by=current_user.id,
-        generated_at=datetime.utcnow()
+        generated_by=current_user.id
     )
     
     db.add(report)

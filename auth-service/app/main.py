@@ -1,10 +1,12 @@
+import sys
+import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.docs import get_swagger_ui_html, get_redoc_html
 from fastapi.staticfiles import StaticFiles
 from app.core.api import auth, admin
-from shared.database import engine
-from app.core.models import Base
+from app.core.database import engine
+from app.core.models.base import Base
 import logging
 from app.core.monitoring import init_monitoring, log_request_middleware
 
@@ -13,8 +15,8 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = FastAPI(
-    title="Digital ID System - Auth Service",
-    description="Authentication and Authorization Service for Digital ID System",
+    title="Auth Service",
+    description="Authentication and Authorization Service",
     version="1.0.0",
     docs_url=None,  # Disable default docs
     redoc_url=None  # Disable default redoc
@@ -23,7 +25,7 @@ app = FastAPI(
 # Initialize monitoring
 init_monitoring(app)
 
-# CORS middleware
+# Configure CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -80,4 +82,8 @@ app.include_router(
         401: {"description": "Authentication required"},
         403: {"description": "Admin privileges required"},
     }
-) 
+)
+
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy"} 

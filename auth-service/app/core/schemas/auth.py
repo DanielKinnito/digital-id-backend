@@ -1,26 +1,29 @@
 from pydantic import BaseModel, EmailStr
-from typing import Optional
-from app.core.models.user import UserRole
+from typing import List, Optional
+from datetime import datetime
 
 class Token(BaseModel):
     access_token: str
     token_type: str
 
 class TokenData(BaseModel):
-    user_id: Optional[int] = None
-    role: Optional[UserRole] = None
+    user_id: int
+    roles: List[str]
+    permissions: List[str]
 
-class UserLogin(BaseModel):
-    username: str
-    password: str
-
-class UserResponse(BaseModel):
-    id: int
+class UserBase(BaseModel):
     username: str
     email: EmailStr
-    role: UserRole
-    institution_id: Optional[int]
+    institution_id: Optional[int] = None
+
+class UserCreate(UserBase):
+    password: str
+
+class UserResponse(UserBase):
+    id: int
     is_active: bool
+    created_at: datetime
+    roles: List[str]
 
     class Config:
-        orm_mode = True 
+        from_attributes = True 
