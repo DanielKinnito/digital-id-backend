@@ -91,11 +91,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Create static directory if it doesn't exist
-static_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "static")
+# Update the static files path
+static_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static")
 os.makedirs(static_dir, exist_ok=True)
 
-# Mount static files
+# Mount static files before the app routes
 app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
 @app.get("/docs", include_in_schema=False)

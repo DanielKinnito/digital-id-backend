@@ -20,7 +20,7 @@ class DigitalID(Base):
     issued_at = Column(DateTime, default=datetime.utcnow)
     expires_at = Column(DateTime, nullable=False)
     issuer_id = Column(Integer, nullable=False)
-    metadata = Column(String(1000))  # JSON string for additional data
+    # metadata = Column(String(1000))  # JSON string for additional data
     institution_id = Column(Integer, ForeignKey('institutions.id'))
 
     # Relationships
