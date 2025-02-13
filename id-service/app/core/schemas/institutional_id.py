@@ -1,7 +1,9 @@
 from pydantic import BaseModel, constr
-from typing import Optional, Dict
+from typing import Optional, Dict, Annotated
 from datetime import datetime
 from enum import Enum
+
+ConstrainedIDNumber = constr(min_length=4, max_length=20)
 
 class IDType(str, Enum):
     STUDENT = "student"
@@ -12,7 +14,7 @@ class IDType(str, Enum):
 class InstitutionalIDCreate(BaseModel):
     main_id: str
     id_type: IDType
-    id_number: constr(min_length=4, max_length=20)  # Institution-specific ID number
+    id_number: Annotated[str, constr(min_length=4, max_length=20)]  # Institution-specific ID number
     department: Optional[str]
     position: Optional[str]
     valid_from: datetime
