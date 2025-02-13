@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+pydantic-settings
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+asyncpg
+alembic
+python-dotenv
+pika
+email-validator
+cryptography
+aiofiles
+pywin32
+httpx
