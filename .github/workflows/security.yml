@@ -5,8 +5,8 @@ on:
     branches: [ main, develop ]
   pull_request:
     branches: [ main, develop ]
-  schedule:
-    - cron: '0 0 * * *'  # Run daily
+  # schedule:
+    # - cron: '0 0 * * *'  # Run daily # commented to stop for now
 
 jobs:
   security-scan:
