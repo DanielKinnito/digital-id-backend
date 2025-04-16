@@ -1,8 +1,9 @@
 name: CI/CD Pipeline
 
 on:
-  push:
-    branches: [ main, develop ]
+# commented to stop for now
+  # push:
+  #   branches: [ main, develop ]
   pull_request:
     branches: [ main, develop ]
 
