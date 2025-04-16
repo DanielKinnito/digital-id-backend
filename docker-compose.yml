@@ -1,0 +1,88 @@
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-digitalid}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-digitalidpass}
+      POSTGRES_MULTIPLE_DATABASES: auth_db,user_db,id_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/postgres/init-multiple-dbs.sh:/docker-entrypoint-initdb.d/init-multiple-dbs.sh
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-digitalid}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  auth-service:
+    build: ./auth-service
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./auth-service/.env
+    networks:
+      - digital-id-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  user-service:
+    build: ./user-service
+    ports:
+      - "8001:8001"
+    env_file:
+      - ./user-service/.env
+    networks:
+      - digital-id-network
+    depends_on:
+      auth-service:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  id-service:
+    build: ./id-service
+    ports:
+      - "8002:8002"
+    env_file:
+      - ./id-service/.env
+    networks:
+      - digital-id-network
+    depends_on:
+      auth-service:
+        condition: service_healthy
+      user-service:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  postgres_data:
+  redis_data:
+  user_data:
+
+networks:
+  digital-id-network:
+    driver: bridge 

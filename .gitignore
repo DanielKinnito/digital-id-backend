@@ -61,8 +61,8 @@ celerybeat-schedule
 
 # If you are using Docker
 *.dockerignore
-Dockerfile
-docker-compose.yml
+# Dockerfile
+# docker-compose.yml
 
 # If you are using virtualenv
 .env
